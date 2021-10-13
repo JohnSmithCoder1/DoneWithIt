@@ -23,15 +23,19 @@ export default function App() {
         />
       </TouchableWithoutFeedback>
       <Button 
-        title="Tap Me"
+        title="Tap Me For Alert"
         onPress={() => alert('Button pressed')}
       />
       <Button 
-        title="Tap Me Too"
+        title="Tap Me For Alert With Buttons"
         onPress={() => Alert.alert('My title', 'My message', [
           {text: 'Yes', onPress: () => console.log('Yes')},
           {text: 'No', onPress: () => console.log('No')}
         ])}
+      />
+      <Button 
+        title="Tap Me For Alert With Prompt"
+        onPress={() => Alert.prompt('My title', 'My message', (text) => console.log(text))} // only works on iOS
       />
       <StatusBar style="auto" />
     </SafeAreaView>
