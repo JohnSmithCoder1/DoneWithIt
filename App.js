@@ -11,7 +11,7 @@ export default function App() {
       <TouchableOpacity>
         <Image source={require('./assets/favicon.png')} />
       </TouchableOpacity>
-      <TouchableWithoutFeedback onPress={() => console.log("Image pressed")}>
+      <TouchableWithoutFeedback onPress={() => console.log('Image pressed')}>
         <Image 
           blurRadius={10}
           fadeDuration={2000} // only works on Android
@@ -24,7 +24,7 @@ export default function App() {
       </TouchableWithoutFeedback>
       <Button 
         title="Tap Me"
-        onPress={() => console.log("Button tapped")}
+        onPress={() => alert('Button pressed')}
       />
       <StatusBar style="auto" />
     </SafeAreaView>
