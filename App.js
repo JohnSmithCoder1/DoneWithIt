@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Image, SafeAreaView, StyleSheet, Text, TouchableWithoutFeedback } from 'react-native';
+import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 
 export default function App() {
   const handlePress = () => console.log("Text pressed");
@@ -8,7 +8,9 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text numberOfLines={1} onPress={handlePress}>Hello Ubiquisoft</Text>
-      <Image source={require('./assets/favicon.png')} />
+      <TouchableOpacity>
+        <Image source={require('./assets/favicon.png')} />
+      </TouchableOpacity>
       <TouchableWithoutFeedback onPress={() => console.log("Image pressed")}>
         <Image 
           blurRadius={10}
