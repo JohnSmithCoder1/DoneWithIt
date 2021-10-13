@@ -6,7 +6,7 @@ export default function App() {
   const handlePress = () => console.log("Text pressed");
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, containerStyle]}>
       <Text numberOfLines={1} onPress={handlePress}>Hello Ubiquisoft</Text>
       <TouchableOpacity>
         <Image source={require('./assets/favicon.png')} />
@@ -35,6 +35,7 @@ export default function App() {
       />
       <Button 
         title="Tap Me For Alert With Prompt"
+        color='green'
         onPress={() => Alert.prompt('My title', 'My message', (text) => console.log(text))} // only works on iOS
       />
       <StatusBar style="auto" />
@@ -42,7 +43,9 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
+const containerStyle = { backgroundColor: 'lightgrey' };
+
+const styles = StyleSheet.create({ // this method validates the properties we pass (will throw error if misspelled, etc., instead of just using a regular javascript object)
   container: {
     flex: 1,
     backgroundColor: '#fff',
