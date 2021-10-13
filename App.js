@@ -9,6 +9,10 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <Text numberOfLines={1} onPress={handlePress}>Hello Ubiquisoft</Text>
       <Image source={require('./assets/favicon.png')} />
+      <Image source={{ 
+        width: 200,
+        height: 300,
+        uri: 'https://picsum.photos/200/300' }} />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
