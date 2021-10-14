@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Alert, Button, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
+import { Alert, Button, Image, Platform, SafeAreaView, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 
 export default function App() {
   const handlePress = () => console.log("Text pressed");
 
   return (
+    // SafeAreaView only works for iOS
     <SafeAreaView style={[styles.container, containerStyle]}>
       <Text numberOfLines={1} onPress={handlePress}>Hello Ubiquisoft</Text>
       <TouchableOpacity>
@@ -49,7 +50,8 @@ const styles = StyleSheet.create({ // this method validates the properties we pa
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center'
+    // justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: Platform.OS === 'android' ? 20 : 0,
   },
 });
