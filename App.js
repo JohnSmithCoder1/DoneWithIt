@@ -1,13 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Platform, SafeAreaView, StyleSheet, } from 'react-native';
+import { Dimensions, Platform, SafeAreaView, StyleSheet, View, } from 'react-native';
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
-  const handlePress = () => console.log("Text pressed");
+  // console.log(Dimensions.get('screen')); // does not respond to orientation changes
+  // console.log(useDimensions()); // does respond to orientation changes
+  console.log(useDeviceOrientation());
 
   return (
     // SafeAreaView only works for iOS
     <SafeAreaView style={styles.container}>
+      <View style={{
+        backgroundColor: 'dodgerblue',
+        width: '100%',
+        height: '30%',
+      }}></View>
       <StatusBar style='auto' />
     </SafeAreaView>
   );
